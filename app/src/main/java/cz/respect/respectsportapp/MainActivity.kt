@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import cz.respect.respectsportapp.databinding.ActivityMainBinding
+import androidx.databinding.DataBindingUtil
 import cz.respect.respectsportapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
@@ -28,13 +29,16 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        val intent = Intent(this,LoginActivity::class.java)
-        startActivity(intent)
+        //val intent = Intent(this,LoginActivity::class.java)
+        //startActivity(intent)
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        binding.appBarMain.mainBarUsername.text = "fasdfs"
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
