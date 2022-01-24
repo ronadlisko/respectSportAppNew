@@ -1,5 +1,6 @@
 package cz.respect.respectsportapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -12,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import cz.respect.respectsportapp.databinding.ActivityMainBinding
+import cz.respect.respectsportapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
+
+        val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
