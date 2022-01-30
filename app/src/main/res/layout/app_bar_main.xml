@@ -2,7 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <data>
+        <variable
+            name="myName"
+            type="cz.respect.respectsportapp.data.MyName" />
+    </data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,7 +29,7 @@
                 android:id="@+id/mainBarUsername"
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@={myName.name}" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

@@ -14,12 +14,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import cz.respect.respectsportapp.databinding.ActivityMainBinding
 import androidx.databinding.DataBindingUtil
+import cz.respect.respectsportapp.data.MyName
 import cz.respect.respectsportapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private val myName: MyName = MyName("Aleks Haecky")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +39,8 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        binding.appBarMain.mainBarUsername.text = "fasdfs"
+
+        binding.appBarMain.myName = myName;
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
