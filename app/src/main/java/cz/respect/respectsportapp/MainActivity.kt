@@ -3,6 +3,7 @@ package cz.respect.respectsportapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -12,15 +13,18 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import cz.respect.respectsportapp.databinding.ActivityMainBinding
-import androidx.databinding.DataBindingUtil
 import cz.respect.respectsportapp.data.MyName
+import cz.respect.respectsportapp.data.model.AppDatabase
+import cz.respect.respectsportapp.ui.gallery.GalleryViewModel
 import cz.respect.respectsportapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    // binding
     private val myName: MyName = MyName("Aleks Haecky")
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,13 +1,16 @@
 package cz.respect.respectsportapp.ui.gallery
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import cz.respect.respectsportapp.data.model.User
+import cz.respect.respectsportapp.data.model.UserRepository
+import cz.respect.respectsportapp.ui.home.HomeViewModel
+import kotlinx.coroutines.launch
 
-class GalleryViewModel : ViewModel() {
+class GalleryViewModel(private val repository: UserRepository) : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"
     }
+
     val text: LiveData<String> = _text
 }
