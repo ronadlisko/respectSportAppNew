@@ -3,6 +3,7 @@ package cz.respect.respectsportapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -18,21 +19,22 @@ import cz.respect.respectsportapp.databinding.ActivityMainBinding
 import cz.respect.respectsportapp.data.MyName
 import cz.respect.respectsportapp.data.model.AppDatabase
 import cz.respect.respectsportapp.ui.gallery.GalleryViewModel
+import cz.respect.respectsportapp.ui.home.HomeViewModel
 import cz.respect.respectsportapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    // binding
-    private val myName: MyName = MyName("Aleks Haecky")
+
+    //private val myName: MyName = MyName("Aleks Haecky")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // starting the Login activity
-        val loginIntent = Intent(this,LoginActivity::class.java)
-        startActivity(loginIntent)
+        //val loginIntent = Intent(this,LoginActivity::class.java)
+        //startActivity(loginIntent)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        binding.appBarMain.myName = myName
+       // binding.appBarMain.myName = myName
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -59,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

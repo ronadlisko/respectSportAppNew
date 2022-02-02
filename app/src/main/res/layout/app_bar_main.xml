@@ -25,12 +25,6 @@
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/Theme.RespectSportAppNew.PopupOverlay" />
 
-            <TextView
-                android:id="@+id/mainBarUsername"
-                android:layout_width="109dp"
-                android:layout_height="wrap_content"
-                android:text="@={myName.name}" />
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <include layout="@layout/content_main" />

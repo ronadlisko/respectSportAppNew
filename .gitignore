@@ -1,3 +1,4 @@
+/.app/src/main/java/cz/respect/respectsportapp/network/*
 *.iml
 .gradle
 /local.properties

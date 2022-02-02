@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import cz.respect.respectsportapp.R
 import cz.respect.respectsportapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -39,6 +39,10 @@ class HomeFragment : Fragment() {
         homeViewModel.response.observe(viewLifecycleOwner, Observer {
             textView2.text = it
         })
+        homeViewModel.status.observe(viewLifecycleOwner, Observer {
+            //homeViewModel.status.value = ""
+            showMatchesErrors(it)
+        })
 
         return root
     }
@@ -46,5 +50,13 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showMatchesErrors(apiResponseString:String) {
+        Toast.makeText(
+            activity,
+            apiResponseString,
+            Toast.LENGTH_LONG
+        ).show()
     }
 }
