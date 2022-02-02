@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // starting the Login activity
-        val intent = Intent(this,LoginActivity::class.java)
-        startActivity(intent)
+        val loginIntent = Intent(this,LoginActivity::class.java)
+        startActivity(loginIntent)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
