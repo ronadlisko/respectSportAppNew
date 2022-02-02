@@ -26,13 +26,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // starting the Login activity
+        val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-
-        //val intent = Intent(this,LoginActivity::class.java)
-        //startActivity(intent)
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        binding.appBarMain.myName = myName;
+        binding.appBarMain.myName = myName
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
